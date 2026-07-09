@@ -227,6 +227,38 @@
     font-size:12.5px;
     color:var(--gris);
   }
+  /* Tabla de los 8 cambios como tarjetas en pantallas estrechas */
+  @media (max-width:640px){
+    table{display:block;}
+    table tr{
+      display:block;
+      border:1px solid var(--borde);
+      border-radius:8px;
+      margin-bottom:12px;
+      padding:10px 12px;
+    }
+    table tr:first-child{display:none;}
+    table tr:nth-child(n) td{background:transparent !important;}
+    table tr:nth-child(n) td.num{background:var(--amarillo) !important;}
+    table td{display:block;border-bottom:none;padding:3px 0;}
+    td.num{
+      display:inline-block;
+      background:var(--amarillo);
+      border-radius:12px;
+      padding:0 10px;
+      line-height:24px;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    td.num::before{content:"Cambio ";}
+    table td:nth-child(4),
+    table td:nth-child(5){display:inline-block;margin-right:14px;padding-top:6px;}
+    table td:nth-child(4)::before{content:"Coste: ";font-size:12px;font-weight:600;color:var(--gris);}
+    table td:nth-child(5)::before{content:"Beneficio: ";font-size:12px;font-weight:600;color:var(--gris);}
+    tr.separador{border:none;padding:4px 0;margin-bottom:8px;}
+    tr.separador td{padding:0;}
+    tr.futuro{background:#fafaf8;}
+  }
   @media print{
     body{padding:0 10mm;font-size:12px;}
     header{padding-top:10mm;}
